@@ -15,7 +15,7 @@ function playRound(playerSelection, computerSelection){
     else if (playerSelection === 'Rock' && computerSelection === 'Scissors') 
         return 'You win! Rock beats Scissors';
     else if (playerSelection === 'Paper' && computerSelection === 'Rock') 
-        return 'You win! Rock beats Scissors';
+        return 'You win! Paper beats Rock';
     else if (playerSelection === 'Paper' && computerSelection === 'Scissors') 
         return 'You lose! Scissors beat Paper';
     else if (playerSelection === 'Scissors' && computerSelection === 'Rock') 
@@ -25,5 +25,6 @@ function playRound(playerSelection, computerSelection){
 }
 
 //return string declaring the winner, with details
+console.log(`You played ${playerSelection} and Computer played ${computerSelection}`);
 console.log(playRound(playerSelection, computerSelection));
 
