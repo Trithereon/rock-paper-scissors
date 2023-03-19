@@ -10,7 +10,7 @@ function game(){
                 playerSelection = button.id;
                 const computerSelection = computerPlay();
                 //The two following lines are to output results to console for troubleshooting/testing.
-                //console.log(playRound(playerSelection, computerSelection));
+                playRound(playerSelection, computerSelection);
                 //console.log(`Player score = ${playerScore} \nComputer score = ${computerScore}`);
                 const results = document.getElementById("resultsOutput");
                 results.innerHTML = `Player score = ${playerScore} <br>Computer score = ${computerScore}`;
