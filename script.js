@@ -1,10 +1,22 @@
 function game(){
     let playerScore = 0;
     let computerScore = 0;
-    
-        let playerSelection = prompt('Rock, Paper, or Scissors?'); //Must be made case-insensitive
-        playerSelection = playerSelection.toUpperCase();
-        let computerSelection = computerPlay();
+    let playerSelection = "";
+   
+    const buttons = document.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                playerSelection = (button.id);
+                let computerSelection = computerPlay();
+                console.log(playRound(playerSelection, computerSelection));
+            })
+        });
+        
+        //the prompt below can be used instead of buttons. Requires user typing input.
+        //let playerSelection = prompt('Rock, Paper, or Scissors?'); //Must be made case-insensitive
+        //playerSelection = playerSelection.toUpperCase();
+        //let computerSelection = computerPlay();
 
         function computerPlay(){
             const inputs = ['ROCK', 'PAPER', 'SCISSORS']; 
@@ -40,7 +52,7 @@ function game(){
         //return string declaring the winner, with details
         //uncomment line below to display round details. Commented it to clean up the output.
         //console.log(`You played ${playerSelection} and Computer played ${computerSelection}`);
-        console.log(playRound(playerSelection, computerSelection));
+        
     
 
     //the final verdict is determined
