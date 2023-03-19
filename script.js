@@ -7,8 +7,8 @@ function game(){
 
         buttons.forEach((button) => {
             button.addEventListener('click', () => {
-                playerSelection = (button.id);
-                let computerSelection = computerPlay();
+                playerSelection = button.id;
+                const computerSelection = computerPlay();
                 console.log(playRound(playerSelection, computerSelection));
             })
         });
@@ -56,12 +56,13 @@ function game(){
     
 
     //the final verdict is determined
-    if (playerScore > computerScore) 
+    /* if (playerScore > computerScore) 
         console.log(`You win the game with a score of ${playerScore} to ${computerScore}!`);
     else if (playerScore < computerScore) 
         console.log(`You lose the game with a score of ${playerScore} to ${computerScore}!`);
     else 
-        console.log(`The game has ended in a draw! ${playerScore} to ${computerScore}!`);
+        console.log(`The game has ended in a draw! ${playerScore} to ${computerScore}!`);*/
+        
 }
 
 game();
