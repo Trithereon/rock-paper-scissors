@@ -9,8 +9,12 @@ function game(){
             button.addEventListener('click', () => {
                 playerSelection = button.id;
                 const computerSelection = computerPlay();
-                console.log(playRound(playerSelection, computerSelection));
-            })
+                //The two following lines are to output results to console for troubleshooting/testing.
+                //console.log(playRound(playerSelection, computerSelection));
+                //console.log(`Player score = ${playerScore} \nComputer score = ${computerScore}`);
+                const results = document.getElementById("resultsOutput");
+                results.innerHTML = `Player score = ${playerScore} <br>Computer score = ${computerScore}`;
+            });
         });
         
         //the prompt below can be used instead of buttons. Requires user typing input.
@@ -62,7 +66,7 @@ function game(){
         console.log(`You lose the game with a score of ${playerScore} to ${computerScore}!`);
     else 
         console.log(`The game has ended in a draw! ${playerScore} to ${computerScore}!`);*/
-        
+
 }
 
 game();
