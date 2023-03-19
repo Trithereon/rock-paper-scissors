@@ -1,7 +1,7 @@
 function game(){
     let playerScore = 0;
     let computerScore = 0;
-    for (let i=1; i<=5; i++){
+    
         let playerSelection = prompt('Rock, Paper, or Scissors?'); //Must be made case-insensitive
         playerSelection = playerSelection.toUpperCase();
         let computerSelection = computerPlay();
@@ -41,7 +41,7 @@ function game(){
         //uncomment line below to display round details. Commented it to clean up the output.
         //console.log(`You played ${playerSelection} and Computer played ${computerSelection}`);
         console.log(playRound(playerSelection, computerSelection));
-    }
+    
 
     //the final verdict is determined
     if (playerScore > computerScore) 
