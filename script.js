@@ -1,6 +1,7 @@
 function game(){
     let playerScore = 0;
     let computerScore = 0;
+    let draws = 0;
     let playerSelection = "";
    
     const buttons = document.querySelectorAll('button');
@@ -9,11 +10,19 @@ function game(){
             button.addEventListener('click', () => {
                 playerSelection = button.id;
                 const computerSelection = computerPlay();
-                //The two following lines are to output results to console for troubleshooting/testing.
                 playRound(playerSelection, computerSelection);
-                //console.log(`Player score = ${playerScore} \nComputer score = ${computerScore}`);
                 const results = document.getElementById("resultsOutput");
-                results.innerHTML = `Player score = ${playerScore} <br>Computer score = ${computerScore}`;
+                results.innerHTML = `Player score = ${playerScore} <br>Computer score = ${computerScore} <br>Draws = ${draws}`;
+                /*if (playerScore === 5){
+                    const victoryStatement = document.createElement("div");
+                    victoryStatement.innerHTML = `And the grand winner is... You!`;
+                    console.log("player victory");
+                }
+                else if (computerScore === 5){
+                    const victoryStatement = document.createElement("div");
+                    victoryStatement.innerHTML = `And the grand winner is... Computer!`;
+                    console.log("computer victory");
+                }   */
             });
         });
         
@@ -31,6 +40,7 @@ function game(){
         function playRound(playerSelection, computerSelection){
             //conditional statements to determine the winner. switch? if/else if?
             if (playerSelection === computerSelection){ 
+                draws++;
                 return 'Draw! Nobody wins this round.';
             }else if (playerSelection === 'ROCK' && computerSelection === 'PAPER'){ 
                 computerScore++;
