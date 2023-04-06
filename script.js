@@ -13,16 +13,18 @@ function game(){
                 playRound(playerSelection, computerSelection);
                 const results = document.getElementById("resultsOutput");
                 results.innerHTML = `Player score = ${playerScore} <br>Computer score = ${computerScore} <br>Draws = ${draws}`;
-                /*if (playerScore === 5){
+                if (playerScore === 5){
                     const victoryStatement = document.createElement("div");
-                    victoryStatement.innerHTML = `And the grand winner is... You!`;
+                    victoryStatement.innerHTML = `<br>And the grand winner is... You!`;
+                    results.appendChild(victoryStatement);
                     console.log("player victory");
                 }
                 else if (computerScore === 5){
                     const victoryStatement = document.createElement("div");
-                    victoryStatement.innerHTML = `And the grand winner is... Computer!`;
+                    victoryStatement.innerHTML = `<br>And the grand winner is... Computer!`;
+                    results.appendChild(victoryStatement);
                     console.log("computer victory");
-                }   */
+                }   
             });
         });
         
